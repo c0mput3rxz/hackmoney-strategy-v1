@@ -1,6 +1,6 @@
 from brownie import *
 from config import (
-  BADGER_DEV_MULTISIG,
+  DAOMOON_DEV_MULTISIG,
   WANT,
   LP_COMPONENT,
   REWARD_TOKEN,
@@ -23,21 +23,21 @@ def deploy():
   keeper = deployer
   guardian = deployer
 
-  governance = accounts.at(BADGER_DEV_MULTISIG, force=True)
+  governance = accounts.at(DAOMOON_DEV_MULTISIG, force=True)
 
   controller = Controller.deploy({"from": deployer})
   controller.initialize(
-    BADGER_DEV_MULTISIG,
+    DAOMOON_DEV_MULTISIG,
     strategist,
     keeper,
-    BADGER_DEV_MULTISIG
+    DAOMOON_DEV_MULTISIG
   )
 
   sett = SettV3.deploy({"from": deployer})
   sett.initialize(
     WANT,
     controller,
-    BADGER_DEV_MULTISIG,
+    DAOMOON_DEV_MULTISIG,
     keeper,
     guardian,
     False,
@@ -59,7 +59,7 @@ def deploy():
   ## Start up Strategy
   strategy = MyStrategy.deploy({"from": deployer})
   strategy.initialize(
-    BADGER_DEV_MULTISIG,
+    DAOMOON_DEV_MULTISIG,
     strategist,
     controller,
     keeper,

@@ -1,6 +1,6 @@
 from brownie import *
 from config import (
-  BADGER_DEV_MULTISIG,
+  DAOMOON_DEV_MULTISIG,
   WANT,
   LP_COMPONENT,
   REWARD_TOKEN,

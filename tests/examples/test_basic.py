@@ -1,5 +1,5 @@
 from config import (
-  BADGER_DEV_MULTISIG,
+  DAOMOON_DEV_MULTISIG,
   WANT,
   LP_COMPONENT,
   REWARD_TOKEN,
@@ -21,7 +21,7 @@ def test_deploy_settings(deployed):
   assert protected_tokens[1] == LP_COMPONENT
   assert protected_tokens[2] == REWARD_TOKEN
 
-  assert strategy.governance() == BADGER_DEV_MULTISIG
+  assert strategy.governance() == DAOMOON_DEV_MULTISIG
 
   assert strategy.performanceFeeGovernance() == DEFAULT_GOV_PERFORMANCE_FEE
   assert strategy.performanceFeeStrategist() == DEFAULT_PERFORMANCE_FEE
